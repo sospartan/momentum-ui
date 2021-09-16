@@ -5,7 +5,6 @@
   "license": "MIT",
   "repository": "https://github.com/momentum-design/momentum-ui.git",
   "main": "./dist/index.js",
-  "type": "module",
   "types": "./dist/types/index.d.ts",
   "scripts": {
     "build": "node build.mjs",
