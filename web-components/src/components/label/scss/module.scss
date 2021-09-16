@@ -1,9 +1,9 @@
-@import "@/wc_scss/tools/functions/core";
+@import "../../../wc_scss/tools/functions/core";
 
-@import "@/wc_scss/colors/settings";
-@import "@/wc_scss/settings/core";
-@import "@/wc_scss/typography/settings";
-@import "@/wc_scss/settings/input";
+@import "../../../wc_scss/colors/settings";
+@import "../../../wc_scss/settings/core";
+@import "../../../wc_scss/typography/settings";
+@import "../../../wc_scss/settings/input";
 
 @import "./vars/lm-label-settings";
 @import "./vars/md-label-settings";
@@ -11,7 +11,7 @@
 // Component Specific
 @import "./settings";
 @import "./mixins";
-@import "@/components/checkbox/scss/module.scss";
-@import "@/components/radio/scss/module.scss";
+@import "../../checkbox/scss/module.scss";
+@import "../../radio/scss/module.scss";
 @import "./label";
 

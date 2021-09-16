@@ -10,7 +10,7 @@ import "@/components/icon/Icon";
 import "@/components/menu-overlay/MenuOverlay";
 import { Key } from "@/constants";
 import { customElementWithCheck, ResizeMixin, RovingTabIndexMixin, SlottedMixin } from "@/mixins";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import { html, internalProperty, LitElement, property, PropertyValues, query, queryAll } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";

@@ -2,7 +2,7 @@ import "@/components/input/Input";
 import "@/components/menu-overlay/MenuOverlay";
 import { TIME_UNIT } from "../../constants"; // Keep type import as a relative path
 import { now } from "@/utils/dateUtils";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import { html, internalProperty, LitElement, property, PropertyValues, query } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";

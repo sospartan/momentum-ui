@@ -6,7 +6,7 @@
  *
  */
 
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import { CSSResultArray, html, LitElement, property } from "lit-element";
 import "@/components/button/Button";

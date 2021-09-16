@@ -14,7 +14,7 @@ import { nanoid } from "nanoid";
 import { SlottedMixin } from "@/mixins/SlottedMixin";
 import { RovingTabIndexMixin } from "@/mixins/RovingTabIndexMixin";
 import { classMap } from "lit-html/directives/class-map";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import styles from "./scss/module.scss";
 
 type ItemId = Element["id"];

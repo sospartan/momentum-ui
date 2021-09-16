@@ -8,7 +8,7 @@
 
 import "@/components/badge/Badge";
 import "@/components/icon/Icon";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import { html, LitElement, property } from "lit-element";
 import { nothing } from "lit-html";

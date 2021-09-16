@@ -1,4 +1,4 @@
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import { html, internalProperty, LitElement, property, PropertyValues, query } from "lit-element";
 import "@/components/button/Button";

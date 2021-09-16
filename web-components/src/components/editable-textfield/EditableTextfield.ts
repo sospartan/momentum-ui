@@ -8,7 +8,7 @@
 
 import { numInputTypes } from "../../utils/enums"; // Keep type import as a relative path
 import { ValidationRegex } from "@/utils/validations";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import dompurify from "dompurify";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import { CSSResultArray, html, LitElement, property, PropertyValues, query } from "lit-element";

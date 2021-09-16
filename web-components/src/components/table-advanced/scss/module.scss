@@ -6,19 +6,19 @@
  *
  */
 
-@import "@/wc_scss/tools/functions/core";
+@import "../../../wc_scss/tools/functions/core";
 
 @import "~@momentum-ui/icons/scss/variables";
 
-@import "@/wc_scss/colors/settings";
-@import "@/wc_scss/settings/rem";
-@import "@/wc_scss/colors/settings-transparencies";
-@import "@/wc_scss/settings/core";
-@import "@/wc_scss/typography/settings";
+@import "../../../wc_scss/colors/settings";
+@import "../../../wc_scss/settings/rem";
+@import "../../../wc_scss/colors/settings-transparencies";
+@import "../../../wc_scss/settings/core";
+@import "../../../wc_scss/typography/settings";
 
-@import "@/wc_scss/tools/mixins/flex";
-@import "@/wc_scss/tools/mixins/core";
-@import "@/wc_scss/tools/mixins/focus";
+@import "../../../wc_scss/tools/mixins/flex";
+@import "../../../wc_scss/tools/mixins/core";
+@import "../../../wc_scss/tools/mixins/focus";
 
 @import "./vars/md-table-advanced-settings.scss";
 @import "./vars/lm-table-advanced-settings.scss";

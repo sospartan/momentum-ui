@@ -1,4 +1,4 @@
-@import "@/wc_scss/colors/settings.scss";
+@import "../colors/settings.scss";
 
 @mixin global-vars {
   --sandbox-bg-color: #{$md-gray-20};

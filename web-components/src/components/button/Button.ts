@@ -6,12 +6,12 @@
  *
  */
 
-import activityButtonStyles from "@/components/activity-button/scss/module.scss";
+import activityButtonStyles from "../../components/activity-button/scss/module.scss";
 import "@/components/loading/Loading";
 import "@/components/spinner/Spinner";
 import { Key } from "@/constants";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import { html, LitElement, property, query } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";

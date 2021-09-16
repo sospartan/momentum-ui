@@ -1,6 +1,6 @@
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import { html, LitElement, property, internalProperty, PropertyValues } from "lit-element";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import styles from "./scss/module.scss";
 import "@/components/input/Input";
 import { ValidationRegex } from "@/utils/validations.ts";

@@ -1,7 +1,7 @@
 import "@/components/combobox/ComboBox";
 import "@/components/input/Input";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import { customArray } from "country-codes-list";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
 import { AsYouType, CountryCode, isValidNumberForRegion } from "libphonenumber-js";

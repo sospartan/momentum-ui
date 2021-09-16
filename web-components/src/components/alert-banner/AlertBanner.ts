@@ -7,7 +7,7 @@
 */
 
 import { Key } from "@/constants";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import { CSSResultArray, html, LitElement, property } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";

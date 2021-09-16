@@ -1,6 +1,6 @@
 import "@/components/button/Button";
 import { customElementWithCheck } from "@/mixins";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import hljs from "highlight.js/lib/core";
 import { html, internalProperty, LitElement, property, PropertyValues, query } from "lit-element";
 import { nothing } from "lit-html";

@@ -8,7 +8,7 @@
 
 import { html, LitElement, property, PropertyValues, query } from "lit-element";
 import Sortable from "sortablejs";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import styles from "./scss/module.scss";
 import { debounce } from "@/utils/helpers";
 import { customElementWithCheck, SlottedMixin } from "@/mixins";

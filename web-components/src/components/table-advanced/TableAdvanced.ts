@@ -11,7 +11,7 @@ import "@/components/icon/Icon";
 import "@/components/menu-overlay/MenuOverlay";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import { FocusTrapMixin } from "@/mixins/FocusTrapMixin";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import { html, internalProperty, LitElement, property, PropertyValues, queryAll } from "lit-element";
 import { nothing, TemplateResult } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";

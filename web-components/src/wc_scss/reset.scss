@@ -1,25 +1,25 @@
-@import "@/wc_scss/path";
+@import "./path";
 
 // Core Functions
-@import "@/wc_scss/tools/functions/core";
+@import "./tools/functions/core";
 
 // Settings
-@import "@/wc_scss/colors/settings-base";
-@import "@/wc_scss/settings/core";
+@import "./colors/settings-base";
+@import "./settings/core";
 
 // Tools
-@import "@/wc_scss/tools/mixins/core";
-@import "@/wc_scss/tools/mixins/focus";
-@import "@/wc_scss/tools/mixins/baseline";
+@import "./tools/mixins/core";
+@import "./tools/mixins/focus";
+@import "./tools/mixins/baseline";
 
 // Typography
-@import "@/wc_scss/typography/settings.scss";
-@import "@/wc_scss/typography/mixins.scss";
-@import "@/wc_scss/typography/typography.scss";
+@import "./typography/settings.scss";
+@import "./typography/mixins.scss";
+@import "./typography/typography.scss";
 
 // Generic
-@import "@/wc_scss/generic/normalize";
-@import "@/wc_scss/generic/global";
+@import "./generic/normalize";
+@import "./generic/global";
 
 [class^="md-"] {
   box-sizing: border-box;

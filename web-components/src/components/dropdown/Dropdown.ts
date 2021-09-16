@@ -9,7 +9,7 @@
 import "@/components/icon/Icon";
 import { Key } from "@/constants";
 import { customElementWithCheck, FocusMixin } from "@/mixins";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import { internalProperty, LitElement, property, PropertyValues, query, queryAll } from "lit-element";
 import { html } from "lit-html";
 import { classMap } from "lit-html/directives/class-map.js";

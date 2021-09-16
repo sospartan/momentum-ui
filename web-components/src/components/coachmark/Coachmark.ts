@@ -7,7 +7,7 @@
  */
 
 import { FocusTrapMixin } from "@/mixins";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import styles from "./scss/module.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import { html, LitElement, property, query, PropertyValues } from "lit-element";

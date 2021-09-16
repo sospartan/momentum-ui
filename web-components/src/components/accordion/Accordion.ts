@@ -8,7 +8,7 @@
 import { Key } from "@/constants";
 import { SlottedMixin } from "@/mixins";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import { html, LitElement, property, PropertyValues, query } from "lit-element";
 import { AccordionItem } from "./AccordionItem";
 import styles from "./scss/module.scss";

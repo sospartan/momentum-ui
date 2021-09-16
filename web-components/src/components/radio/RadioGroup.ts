@@ -9,7 +9,7 @@
 import { Radio } from "./Radio";
 import { Key } from "@/constants";
 import { RovingTabIndexMixin } from "@/mixins";
-import reset from "@/wc_scss/reset.scss";
+import reset from "../../wc_scss/reset.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import { html, LitElement, property, PropertyValues, query } from "lit-element";
 import styles from "./scss/module.scss";
