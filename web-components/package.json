@@ -8,19 +8,11 @@
   "type": "module",
   "types": "./dist/types/index.d.ts",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "node build.js",
-    "dist": "npm run check && webpack --config-name=distProd",
-    "check": "check-peer-dependencies --yarn",
-    "npm:auth": "uuip-publish-auth [momentum-ui-private]",
-    "npm:publish": "npm run npm:auth && npm run dist && uuip-publish dist momentum-ui-private && cd publish && npm publish",
-    "test": "jest",
-    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
-    "snapshot": "npm run storybook:resource && build-storybook && percy-storybook --widths=1280",
+    "build": "node build.mjs",
+    "postinstall": "npm run build:tokens",
     "clearVars": "node ./src/utils/clearVars.js",
     "createTokensModule": "node ./src/utils/createTokenFilesModule.js",
-    "build:tokens": "yarn createTokensModule && node ./src/utils/generateScssFromTokens.js && node ./src/utils/generateColorTableData.js",
-    "sonar": "yarn install && yarn test && node sonar.config.js"
+    "build:tokens": "yarn createTokensModule && node ./src/utils/generateScssFromTokens.js && node ./src/utils/generateColorTableData.js"
   },
   "resolutions": {
     "jest": "^26.4.2",
