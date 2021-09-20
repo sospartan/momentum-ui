@@ -9,12 +9,6 @@
 /stats/css
 /stats/json
 
-# auto generated token style variables
-/src/wc_scss/colors/vars
-src/components/*/scss/vars
-src/wc_scss/themes/vars
-src/tokens/vars
-src/tokens/vars/*
 
 yarn.lock
 yarn-error.log
