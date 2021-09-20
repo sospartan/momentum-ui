@@ -13,7 +13,7 @@ import { getDate, isDayDisabled, isSameDay, now } from "@/utils/dateUtils";
 import { DatePickerProps, DayFilters } from "../../../utils/dateUtils"; // Keep type import as a relative path
 import { closestElement } from "@/utils/helpers";
 import reset from "@/wc_scss/reset.scss";
-import { html, internalProperty, LitElement, property, PropertyValues, query } from "lit-element";
+import { html, state, LitElement, property, PropertyValues, query } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { DateTime } from "luxon";
@@ -30,10 +30,10 @@ export namespace DatePickerDay {
     @property({ attribute: false }) filterParams: DayFilters | undefined = undefined;
     @property({ attribute: false }) datePickerProps: DatePickerProps | undefined = undefined;
 
-    @internalProperty() protected isOutsideMonth = false;
-    @internalProperty() protected isToday = false;
-    @internalProperty() protected parentRangePicker: DateRangePicker.ELEMENT | null = null;
-    @internalProperty() protected dateIsInRange = false;
+    @state() protected isOutsideMonth = false;
+    @state() protected isToday = false;
+    @state() protected parentRangePicker: DateRangePicker.ELEMENT | null = null;
+    @state() protected dateIsInRange = false;
 
     @query("md-button") button!: HTMLButtonElement;
 

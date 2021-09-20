@@ -11,7 +11,7 @@ import { FocusMixin } from "@/mixins/FocusMixin";
 import reset from "@/wc_scss/reset.scss";
 import iconNamesList from "@momentum-ui/icons/data/iconNames.json";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
-import { html, internalProperty, LitElement, property, query } from "lit-element";
+import { html, state, LitElement, property, query } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
@@ -176,7 +176,7 @@ export namespace Input {
 
     @query(".md-input") input!: HTMLInputElement;
 
-    @internalProperty() private isEditing = false;
+    @state() private isEditing = false;
 
     private readonly messageController = new MessageController();
 

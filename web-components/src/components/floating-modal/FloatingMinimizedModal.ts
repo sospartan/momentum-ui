@@ -1,6 +1,6 @@
 import reset from "@/wc_scss/reset.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
-import { html, internalProperty, LitElement, property, PropertyValues, query } from "lit-element";
+import { html, state, LitElement, property, PropertyValues, query } from "lit-element";
 import "@/components/button/Button";
 import "@/components/icon/Icon";
 import styles from "./scss/module.scss";
@@ -34,8 +34,8 @@ export namespace FloatingMinimizedModal {
     @query(".md-floating__header") header!: HTMLDivElement;
 
     // To distinguish between click and drag  
-    @internalProperty() private dragOccured: Boolean | false = false;
-    @internalProperty() private containerTransform: String = "";
+    @state() private dragOccured: Boolean | false = false;
+    @state() private containerTransform: String = "";
 
     private applyInitialPosition = true;
 

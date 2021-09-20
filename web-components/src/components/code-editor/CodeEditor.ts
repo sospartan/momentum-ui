@@ -3,7 +3,7 @@ import "@/components/button/Button";
 import { customElementWithCheck } from "@/mixins";
 import reset from "@/wc_scss/reset.scss";
 import hljs from "highlight.js/lib/core";
-import { html, internalProperty, LitElement, property, PropertyValues, query, queryAssignedNodes } from "lit-element";
+import { html, state, LitElement, property, PropertyValues, query, queryAssignedNodes } from "lit-element";
 import styles from "./scss/module.scss";
 
 export type Method = "get" | "post";
@@ -21,9 +21,9 @@ export namespace CodeEditor {
     @query(".md-code-editor-code-block") codeBlock!: HTMLPreElement;
     @query(".md-code-editor-url") codeUrl!: HTMLSpanElement;
 
-    @internalProperty() private disableCopyButton = true;
-    @internalProperty() private acceptTypes = "";
-    @internalProperty() private copied = false;
+    @state() private disableCopyButton = true;
+    @state() private acceptTypes = "";
+    @state() private copied = false;
 
     @queryAssignedNodes("code-block") slotNodes!: Node[];
     @queryAssignedNodes("code-url") slotUrl!: Node[];

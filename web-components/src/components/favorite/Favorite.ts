@@ -7,7 +7,7 @@
  */
 
 import reset from "@/wc_scss/reset.scss";
-import { html, internalProperty, LitElement, property } from "lit-element";
+import { html, state, LitElement, property } from "lit-element";
 import { FocusMixin } from "@/mixins";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import "@/components/icon/Icon";
@@ -26,7 +26,7 @@ export namespace Favorite {
     @property({ type: String }) id = "";
     @property({ type: String }) label = "Favorite";
 
-    @internalProperty() private customId = "";
+    @state() private customId = "";
 
     connectedCallback() {
       super.connectedCallback();

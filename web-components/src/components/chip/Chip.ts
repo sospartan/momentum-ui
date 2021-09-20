@@ -9,7 +9,7 @@
 import { Key } from "@/constants";
 import reset from "@/wc_scss/reset.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
-import { html, internalProperty, LitElement, property, PropertyValues } from "lit-element";
+import { html, state, LitElement, property, PropertyValues } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import "@/components/icon/Icon";
@@ -44,13 +44,13 @@ export namespace Chip {
     })
     value = "";
 
-    @internalProperty({
+    @state({
       hasChanged(newVal, oldVal) {
         return newVal !== oldVal;
       }
     })
     private textOverflow = false;
-    @internalProperty()
+    @state()
     private renderedText = "";
 
     connectedCallback() {

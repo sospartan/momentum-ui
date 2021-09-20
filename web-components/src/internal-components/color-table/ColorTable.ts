@@ -1,5 +1,5 @@
 import "@/components/table-advanced/TableAdvanced";
-import { customElement, html, internalProperty, LitElement, PropertyValues } from "lit-element";
+import { customElement, html, state, LitElement, PropertyValues } from "lit-element";
 import { colorTableData } from "@/wc_scss/colors/vars/color-table-data-string";
 import { TableAdvanced } from "@/components/table-advanced/TableAdvanced";
 import { nothing } from "lit-html";
@@ -10,7 +10,7 @@ import styles from "./scss/module.scss";
 
 @customElement("color-table")
 export class ColorTableSandbox extends LitElement {
-  @internalProperty() colorTokenTableData:
+  @state() colorTokenTableData:
     | { config: TableAdvanced.Config; data: TableAdvanced.Data }
     | undefined = undefined;
 

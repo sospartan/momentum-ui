@@ -1,9 +1,9 @@
 import "@/components/table-advanced/TableAdvanced";
-import { customElement, html, internalProperty, LitElement } from "lit-element";
+import { customElement, html, state, LitElement } from "lit-element";
 import { ComplexTable, ShortkeyTable } from "@/[sandbox]/sandbox.mock";
 @customElement("default-table-advanced-sandbox")
 export class DefaultTableAdvanced extends LitElement {
-  @internalProperty() litProp = "$";
+  @state() litProp = "$";
 
   render() {
     return html`

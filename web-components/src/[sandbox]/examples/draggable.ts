@@ -3,7 +3,7 @@ import "@/components/draggable/DraggableItem";
 import "@/components/checkbox/Checkbox";
 import "@/components/icon/Icon";
 import "@/components/toggle-switch/ToggleSwitch";
-import { css, customElement, html, internalProperty, LitElement } from "lit-element";
+import { css, customElement, html, state, LitElement } from "lit-element";
 import { DraggableOptions } from "@/[sandbox]/sandbox.mock";
 import { repeat } from "lit-html/directives/repeat";
 
@@ -26,7 +26,7 @@ const draggableItemStyle = css`
 
 @customElement("default-draggable-sandbox")
 export class DefaultDraggable extends LitElement {
-  @internalProperty() private extended = false;
+  @state() private extended = false;
 
   static get styles() {
     return [

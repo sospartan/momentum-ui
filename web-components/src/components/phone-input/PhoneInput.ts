@@ -5,7 +5,7 @@ import reset from "@/wc_scss/reset.scss";
 import { customArray } from "country-codes-list";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
 import { AsYouType, CountryCode, isValidNumberForRegion } from "libphonenumber-js";
-import { html, internalProperty, LitElement, property, query } from "lit-element";
+import { html, state, LitElement, property, query } from "lit-element";
 import { nothing } from "lit-html";
 import { repeat } from "lit-html/directives/repeat.js";
 import { Input } from "../input/Input"; // Keep type import as a relative path
@@ -39,10 +39,10 @@ export namespace PhoneInput {
     @property({ type: String }) value = "";
     @property({ type: String }) errorMessage = "";
 
-    @internalProperty() private countryCode: CountryCode = "US";
-    @internalProperty() private codeList = [];
-    @internalProperty() private formattedValue = "";
-    @internalProperty() private isValid = true;
+    @state() private countryCode: CountryCode = "US";
+    @state() private codeList = [];
+    @state() private formattedValue = "";
+    @state() private isValid = true;
 
     @query("md-combobox") combobox!: HTMLElement;
 

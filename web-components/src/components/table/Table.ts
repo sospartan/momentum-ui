@@ -8,7 +8,7 @@
 
 import reset from "@/wc_scss/reset.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
-import { html, internalProperty, LitElement, property, PropertyValues, query, queryAll } from "lit-element";
+import { html, state, LitElement, property, PropertyValues, query, queryAll } from "lit-element";
 import Papa from "papaparse";
 import { classMap } from "lit-html/directives/class-map.js";
 import styles from "./scss/module.scss";
@@ -34,8 +34,8 @@ export namespace Table {
     @property({ type: Array }) warning: (any | Warn)[] = [];
     @property({ type: Array }) errors:  (any | Warn)[] = [];
 
-    @internalProperty() private sort = { columnName: "", sortting: false };
-    @internalProperty() csvData: any = undefined;
+    @state() private sort = { columnName: "", sortting: false };
+    @state() csvData: any = undefined;
 
     @queryAll('.md-table__body tr[role="row"]') rowTable?: HTMLTableRowElement[];
 

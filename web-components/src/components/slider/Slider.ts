@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 import { Key } from "@/constants";
 import { FocusMixin } from "@/mixins";
 import reset from "@/wc_scss/reset.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
-import { html, internalProperty, LitElement, property, PropertyValues } from "lit-element";
+import { html, state, LitElement, property, PropertyValues } from "lit-element";
 import { nothing } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { repeat } from "lit-html/directives/repeat";
@@ -50,7 +51,7 @@ export namespace Slider {
       this.requestUpdate("disabled", oldValue);
     }
 
-    @internalProperty() private dragging = false;
+    @state() private dragging = false;
 
     private currentMouseEvent?: MouseEvent;
 

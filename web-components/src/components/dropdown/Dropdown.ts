@@ -10,7 +10,7 @@ import "@/components/icon/Icon";
 import { Key } from "@/constants";
 import { customElementWithCheck, FocusMixin } from "@/mixins";
 import reset from "@/wc_scss/reset.scss";
-import { internalProperty, LitElement, property, PropertyValues, query, queryAll } from "lit-element";
+import { state, LitElement, property, PropertyValues, query, queryAll } from "lit-element";
 import { html } from "lit-html";
 import { classMap } from "lit-html/directives/class-map.js";
 import { repeat } from "lit-html/directives/repeat.js";
@@ -43,11 +43,11 @@ export namespace Dropdown {
     @property({ type: Boolean, attribute: "allow-unselected", reflect: true }) allowUnselected = false;
     @property({ type: Number, attribute: "visible-option", reflect: true }) visibleOptions = 8;
 
-    @internalProperty() private renderOptions: RenderOptionMember[] = [];
-    @internalProperty() private selectedKey: string = EMPTY_KEY;
+    @state() private renderOptions: RenderOptionMember[] = [];
+    @state() private selectedKey: string = EMPTY_KEY;
 
-    @internalProperty() private expanded = false;
-    @internalProperty() private focusedIndex = -1;
+    @state() private expanded = false;
+    @state() private focusedIndex = -1;
 
     @query("label") label!: HTMLLabelElement;
     @query("ul.md-dropdown-list") optionsList!: HTMLUListElement;

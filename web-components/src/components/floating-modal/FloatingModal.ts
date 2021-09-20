@@ -1,6 +1,6 @@
 import reset from "@/wc_scss/reset.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
-import { html, internalProperty, LitElement, property, PropertyValues, query } from "lit-element";
+import { html, state, LitElement, property, PropertyValues, query } from "lit-element";
 import "@/components/button/Button";
 import "@/components/icon/Icon";
 import styles from "./scss/module.scss";
@@ -39,7 +39,7 @@ export namespace FloatingModal {
     @property({ type: Boolean, reflect: true }) minimizable = false;
     @property({type: Object}) containerRect: DOMRect | null = null;
 
-    @internalProperty() private dragOccured: boolean | false = false;
+    @state() private dragOccured: boolean | false = false;
 
 
     @query(".md-floating") container?: HTMLDivElement;

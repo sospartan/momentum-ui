@@ -15,7 +15,7 @@ import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import { addDays, addWeeks, DayFilters, isDayDisabled, now, subtractDays, subtractWeeks } from "@/utils/dateUtils";
 import { closestElement } from "@/utils/helpers";
 import { ValidationRegex } from "@/utils/validations";
-import { html, internalProperty, LitElement, property, PropertyValues, query } from "lit-element";
+import { html, state, LitElement, property, PropertyValues, query } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { DateTime } from "luxon";
 import { DateRangePicker } from "../date-range-picker/DateRangePicker";
@@ -35,11 +35,11 @@ export namespace DatePicker {
     @property({ type: Boolean, reflect: true, attribute: "includes-time" }) includesTime = false;
     @property({ type: Boolean }) disabled = false;
 
-    @internalProperty() selectedDate: DateTime = now();
-    @internalProperty() focusedDate: DateTime = now();
-    @internalProperty() filterDate: Function | undefined = undefined;
-    @internalProperty() maxDateData: DateTime | undefined = undefined;
-    @internalProperty() minDateData: DateTime | undefined = undefined;
+    @state() selectedDate: DateTime = now();
+    @state() focusedDate: DateTime = now();
+    @state() filterDate: Function | undefined = undefined;
+    @state() maxDateData: DateTime | undefined = undefined;
+    @state() minDateData: DateTime | undefined = undefined;
 
     @query("md-menu-overlay") menuOverlay!: MenuOverlay.ELEMENT;
 

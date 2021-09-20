@@ -11,7 +11,7 @@ import "@/components/menu-overlay/MenuOverlay";
 import { Key } from "@/constants";
 import { customElementWithCheck, ResizeMixin, RovingTabIndexMixin, SlottedMixin } from "@/mixins";
 import reset from "@/wc_scss/reset.scss";
-import { html, internalProperty, LitElement, property, PropertyValues, query, queryAll } from "lit-element";
+import { html, state, LitElement, property, PropertyValues, query, queryAll } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
 import { styleMap } from "lit-html/directives/style-map";
@@ -57,17 +57,17 @@ export namespace Tabs {
     @property({ type: String, attribute: "tabs-id" }) tabsId = "";
     @property({ type: Boolean, attribute: "persist-selection" }) persistSelection = false;
 
-    @internalProperty() private isMoreTabMenuVisible = false;
-    @internalProperty() private isMoreTabMenuMeasured = false;
-    @internalProperty() private isMoreTabMenuOpen = false;
-    @internalProperty() private isMoreTabMenuSelected = false;
-    @internalProperty() private isMoreTabMenuScrollable = false;
-    @internalProperty() private moreTabMenuOffsetWidth = 0;
-    @internalProperty() private moreTabMenuMaxHeight: string | null = null;
-    @internalProperty() private tabsViewportDataList: TabsViewportDataList = [];
-    @internalProperty() private tabsFilteredAsVisibleList: Tab.ELEMENT[] = [];
-    @internalProperty() private tabsFilteredAsHiddenList: Tab.ELEMENT[] = [];
-    @internalProperty() private noTabsVisible = false;
+    @state() private isMoreTabMenuVisible = false;
+    @state() private isMoreTabMenuMeasured = false;
+    @state() private isMoreTabMenuOpen = false;
+    @state() private isMoreTabMenuSelected = false;
+    @state() private isMoreTabMenuScrollable = false;
+    @state() private moreTabMenuOffsetWidth = 0;
+    @state() private moreTabMenuMaxHeight: string | null = null;
+    @state() private tabsViewportDataList: TabsViewportDataList = [];
+    @state() private tabsFilteredAsVisibleList: Tab.ELEMENT[] = [];
+    @state() private tabsFilteredAsHiddenList: Tab.ELEMENT[] = [];
+    @state() private noTabsVisible = false;
 
     @query("slot[name='tab']") tabSlotElement!: HTMLSlotElement;
     @query("slot[name='panel']") panelSlotElement?: HTMLSlotElement;

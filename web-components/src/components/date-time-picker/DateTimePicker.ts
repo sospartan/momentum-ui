@@ -4,7 +4,7 @@ import { TIME_UNIT } from "../../constants"; // Keep type import as a relative p
 import { now } from "@/utils/dateUtils";
 import reset from "@/wc_scss/reset.scss";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
-import { html, internalProperty, LitElement, property, PropertyValues, query } from "lit-element";
+import { html, state, LitElement, property, PropertyValues, query } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { DateTime } from "luxon";
 import { DatePicker } from "../datepicker/DatePicker";
@@ -31,9 +31,9 @@ export namespace DateTimePicker {
     @property({ type: String }) locale = "en-US";
     @property({ type: Boolean }) disabled = false;
 
-    @internalProperty() fullDateTime: DateTime | undefined = undefined;
-    @internalProperty() selectedTimeObject: DateTime | undefined = undefined;
-    @internalProperty() selectedDateObject: DateTime = now();
+    @state() fullDateTime: DateTime | undefined = undefined;
+    @state() selectedTimeObject: DateTime | undefined = undefined;
+    @state() selectedDateObject: DateTime = now();
 
     firstCycle = true;
 

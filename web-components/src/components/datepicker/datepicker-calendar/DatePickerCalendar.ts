@@ -23,7 +23,7 @@ import {
 } from "@/utils/dateUtils";
 import { DatePickerProps, DayFilters } from "../../../utils/dateUtils"; // Keep type import as a relative path
 import reset from "@/wc_scss/reset.scss";
-import { html, internalProperty, LitElement, property, PropertyValues, TemplateResult } from "lit-element";
+import { html, state, LitElement, property, PropertyValues, TemplateResult } from "lit-element";
 import { DateTime } from "luxon";
 import styles from "../scss/module.scss";
 
@@ -35,8 +35,8 @@ export namespace DatePickerCalendar {
     @property({ attribute: false }) handleMonthChange: Function | undefined = undefined;
     @property({ attribute: false }) datePickerProps: DatePickerProps | undefined = undefined;
 
-    @internalProperty() viewAnchorDate: DateTime = now();
-    @internalProperty() localeMonth: string | undefined = undefined;
+    @state() viewAnchorDate: DateTime = now();
+    @state() localeMonth: string | undefined = undefined;
 
     connectedCallback() {
       super.connectedCallback();

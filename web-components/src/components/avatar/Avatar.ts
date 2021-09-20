@@ -10,7 +10,7 @@ import "@/components/icon/Icon";
 import "@/components/loading/Loading";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import reset from "@/wc_scss/reset.scss";
-import { html, internalProperty, LitElement, property } from "lit-element";
+import { html, state, LitElement, property } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { ifDefined } from "lit-html/directives/if-defined";
@@ -52,8 +52,8 @@ export namespace Avatar {
     @property({ type: Number }) size: Size = 40;
     @property({ type: Boolean, attribute: "has-notification" }) hasNotification = false;
 
-    @internalProperty() private imageLoaded = false;
-    @internalProperty() private imageErrored = false;
+    @state() private imageLoaded = false;
+    @state() private imageErrored = false;
 
     static get styles() {
       return [reset, styles];

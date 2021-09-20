@@ -2,7 +2,7 @@ import "@/components/button/Button";
 import { customElementWithCheck } from "@/mixins";
 import reset from "@/wc_scss/reset.scss";
 import hljs from "highlight.js/lib/core";
-import { html, internalProperty, LitElement, property, PropertyValues, query } from "lit-element";
+import { html, state, LitElement, property, PropertyValues, query } from "lit-element";
 import { nothing } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
 import styles from "./scss/module.scss";
@@ -15,8 +15,8 @@ export namespace InputFile {
 
     @query("input[type='file']") input!: HTMLInputElement;
 
-    @internalProperty() private acceptTypes = "";
-    @internalProperty() private fileName = "";
+    @state() private acceptTypes = "";
+    @state() private fileName = "";
 
     static get styles() {
       return [reset, styles];

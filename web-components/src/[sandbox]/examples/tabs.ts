@@ -6,7 +6,7 @@ import { TabCloseClickEvent } from "@/components/tabs/Tab";
 import "@/components/tabs/TabPanel";
 import "@/components/tabs/Tabs";
 import "@/components/tooltip/Tooltip";
-import { css, customElement, html, internalProperty, LitElement } from "lit-element";
+import { css, customElement, html, state, LitElement } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import { unsafeHTML } from "lit-html/directives/unsafe-html";
 import { nanoid } from "nanoid";
@@ -26,11 +26,11 @@ const tabsOverlayHtmlList = ["All templates", "Only Fb Template", ...Array(20)].
 
 @customElement("default-tabs-sandbox")
 export class TabsTemplateSandbox extends LitElement {
-  @internalProperty() private tabs: any = {};
-  @internalProperty() private isModalOpen = false;
+  @state() private tabs: any = {};
+  @state() private isModalOpen = false;
   defaultTabsOrder = ["WxM", "History", "Answer", "Admins", "Widgets", "News", "Weather", "Turbo"];
-  @internalProperty() private currentTabsOrder = this.defaultTabsOrder;
-  @internalProperty() private isSingleButtonResetEnabled = false;
+  @state() private currentTabsOrder = this.defaultTabsOrder;
+  @state() private isSingleButtonResetEnabled = false;
   closeTabName = "";
 
   private setUpTabs() {

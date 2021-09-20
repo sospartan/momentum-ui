@@ -12,7 +12,7 @@ import { Key } from "@/constants";
 import { FocusTrapMixin } from "@/mixins";
 import { customElementWithCheck } from "@/mixins/CustomElementCheck";
 import reset from "@/wc_scss/reset.scss";
-import { html, internalProperty, LitElement, property, PropertyValues, query } from "lit-element";
+import { html, state, LitElement, property, PropertyValues, query } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import styles from "./scss/module.scss";
@@ -52,7 +52,7 @@ export namespace Modal {
     @property({ type: Boolean }) hideFooter = false;
     @property({ type: Boolean }) hideHeader = false;
 
-    @internalProperty() private animating = false;
+    @state() private animating = false;
 
     @query(".md-modal__backdrop") backDrop!: HTMLElement;
 
