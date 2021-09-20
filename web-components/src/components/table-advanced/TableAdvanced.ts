@@ -538,7 +538,7 @@ export namespace TableAdvanced {
     }
 
     private renderHead() {
-      let groups = nothing;
+      let groups:symbol|TemplateResult = nothing;
       const hasGroup = this.COLS.reduce((acc, col) => (acc = col.group ? true : acc), false);
       if (hasGroup) {
         let gName = "";

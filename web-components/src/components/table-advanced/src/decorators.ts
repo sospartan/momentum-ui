@@ -97,7 +97,7 @@ export class Evt<T extends Detail<V>, V = any> {
 // --------------------------------------
 
 import {  ChildPart, Part } from "lit-html";
-import {directive,Directive,PartInfo} from "lit-html/directive.js"
+import {directive,Directive,PartInfo,PartType,DirectiveParameters} from "lit-html/directive.js"
 import {setChildPartValue} from 'lit-html/directive-helpers.js'
 interface PreviousValue {
   readonly template: HTMLTemplateElement;
@@ -126,17 +126,26 @@ type TPayload = TemplateInfo & {
 export type TemplateCallback = (p: TCallback) => void;
 
 class Factory extends Directive {
-  
-  constructor(partInfo: PartInfo){
-    super(partInfo)
+  constructor(partInfo: PartInfo) {
+    super(partInfo);
+    if (partInfo.type != PartType.CHILD) {
+      throw new Error("templateCallback can only be used in text bindings");
+    }
   }
 
-  render(p: TPayload,part: ChildPart): void {
+  render(p: TPayload): void {
+    const fragment = document.importNode(p.template.content, true);
+    p.cb({
+      content: p.content,
+      row: p.row,
+      col: p.col,
+      insertIndex: p.insertIndex,
+      fragment: fragment,
+    });
+    console.log("call render")
+  }
 
-    // if (!(part instanceof ChildPart)) {
-    //   throw new Error("templateCallback can only be used in text bindings");
-    // }
-
+  update(part: ChildPart, [p]: DirectiveParameters<this>): void {
     const previousValue = previousValues.get(part);
 
     if (
@@ -146,19 +155,11 @@ class Factory extends Directive {
     ) {
       return;
     }
-
     const fragment = document.importNode(p.template.content, true);
-
-    p.cb({
-      content: p.content,
-      row: p.row,
-      col: p.col,
-      insertIndex: p.insertIndex,
-      fragment,
-    });
-
-    setChildPartValue(part,fragment)
+    setChildPartValue(part, fragment);
     previousValues.set(part, { template: p.template, fragment });
+
+    this.render(p);
   }
 }
 
