@@ -82,7 +82,7 @@
 
 :root,
 :host {
-@include css-color-variables
+@include css-color-variables;
   @include global-vars;
   @include global-theme-specfic-vars;
   @include semantic-color-vars;
