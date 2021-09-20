@@ -96,9 +96,17 @@ export class Evt<T extends Detail<V>, V = any> {
 // TEMPLATE decorator
 // --------------------------------------
 
-import {  ChildPart, Part } from "lit-html";
-import {directive,Directive,PartInfo,PartType,DirectiveParameters} from "lit-html/directive.js"
-import {setChildPartValue} from 'lit-html/directive-helpers.js'
+import { ChildPart, Part } from "lit-html";
+import {
+  directive,
+  Directive,
+  PartInfo,
+  PartType,
+  DirectiveParameters,
+  
+} from "lit-html/directive.js";
+import { setChildPartValue } from "lit-html/directive-helpers.js";
+import {noChange} from 'lit';
 interface PreviousValue {
   readonly template: HTMLTemplateElement;
   readonly fragment: DocumentFragment;
@@ -133,7 +141,7 @@ class Factory extends Directive {
     }
   }
 
-  render(p: TPayload): void {
+  render(p: TPayload) {
     const fragment = document.importNode(p.template.content, true);
     p.cb({
       content: p.content,
@@ -143,9 +151,10 @@ class Factory extends Directive {
       fragment: fragment,
     });
     console.log("call render")
+    return fragment
   }
 
-  update(part: ChildPart, [p]: DirectiveParameters<this>): void {
+  update(part: ChildPart, [p]: DirectiveParameters<this>) {
     const previousValue = previousValues.get(part);
 
     if (
@@ -153,13 +162,13 @@ class Factory extends Directive {
       p.template === previousValue.template &&
       part._$committedValue === previousValue.fragment
     ) {
-      return;
+      return noChange;
     }
-    const fragment = document.importNode(p.template.content, true);
+    const fragment = this.render(p);
     setChildPartValue(part, fragment);
     previousValues.set(part, { template: p.template, fragment });
 
-    this.render(p);
+    return fragment;
   }
 }
 
